@@ -8,6 +8,6 @@ namespace Application.Post.DeletePost
 {
     public class DeletePostCommand
     {
-        public string? PostUrl { get; set; }
+        public int id { get; set; }
     }
 }
