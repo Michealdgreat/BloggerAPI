@@ -5,7 +5,7 @@ namespace Domain.PostDomain
 {
     public class Post
     {
-        public Guid PostId { get; set; }
+        public int PostId { get; set; }
         public required string Title { get; set; }
         public string? Description { get; set; }
         public string PostUrl { get; set; }
