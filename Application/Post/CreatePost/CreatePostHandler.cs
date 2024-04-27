@@ -1,11 +1,6 @@
 ﻿using Infrastructure.DataAccess;
 using MediatR;
-using Domain.PostDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Application.Post.CreatePost;
 
@@ -15,7 +10,7 @@ public class CreatePostHandler(IRepositoryBase repositoryBase) : IRequest<Create
 
     public Task Handle(CreatePostCommand request)
     {
-        _repoBase.ToDataBase<dynamic>("", new { request }, "");
+        _repoBase.ToDataBase<dynamic>("dbo.AddPostWithCategories", new { request }, "BloggerConnStrings");
 
         return Task.CompletedTask;
     }
