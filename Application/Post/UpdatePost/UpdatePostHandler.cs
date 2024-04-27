@@ -9,7 +9,7 @@ public class UpdatePostHandler(IRepositoryBase repositoryBase) : IRequest<Update
 
     public Task Handle(UpdatePostCommand request)
     {
-        _repoBase.ToDataBase<dynamic>("", new { request }, "");
+        _repoBase.ToDataBase<dynamic>("dbo.UpdatePost", new { request }, "BloggerConnStrings");
 
         return Task.CompletedTask;
     }

@@ -10,7 +10,7 @@ public class DeletePostHandler(IRepositoryBase repositoryBase) : IRequest<Delete
 
     public Task Handle(DeletePostCommand request)
     {
-        _repoBase.ToDataBase<dynamic>("", new { }, "");
+        _repoBase.ToDataBase<dynamic>("dbo.DeletePost", new { }, "BloggerConnStrings");
 
         return Task.CompletedTask;
     }
