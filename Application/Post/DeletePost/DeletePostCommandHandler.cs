@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Post.DeletePost;
 
-public class DeletePostHandler(IRepositoryBase repositoryBase) : IRequest<DeletePostCommand>
+public class DeletePostCommandHandler(IRepositoryBase repositoryBase) : IRequest<DeletePostCommand>
 {
     private readonly IRepositoryBase _repoBase = repositoryBase;
 

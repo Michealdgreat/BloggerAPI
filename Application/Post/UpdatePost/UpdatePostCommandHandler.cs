@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Post.UpdatePost;
 
-public class UpdatePostHandler(IRepositoryBase repositoryBase) : IRequest<UpdatePostCommand>
+public class UpdatePostCommandHandler(IRepositoryBase repositoryBase) : IRequest<UpdatePostCommand>
 {
     private readonly IRepositoryBase _repoBase = repositoryBase;
 

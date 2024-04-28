@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Post.CreatePost;
 
-public class CreatePostHandler(IRepositoryBase repositoryBase) : IRequest<CreatePostCommand>
+public class CreatePostCommandHandler(IRepositoryBase repositoryBase) : IRequest<CreatePostCommand>
 {
     private readonly IRepositoryBase _repoBase = repositoryBase;
 
