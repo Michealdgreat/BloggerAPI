@@ -32,5 +32,17 @@ public class RepositoryBase(IConfiguration config) : IRepositoryBase
             parameters, commandType: CommandType.StoredProcedure);
     }
 
+    public async Task<T?> GetOneFromDataBase<T, U>(string dbSp, U parameters, string dbConnString)
+    {
+        string? connectionString = _config.GetConnectionString(dbConnString);
+
+        using IDbConnection connection = new SqlConnection(connectionString);
+
+        var rows = await connection.QueryFirstOrDefaultAsync<T>(dbSp, parameters,
+            commandType: CommandType.StoredProcedure);
+
+        return rows;
+    }
+
 }
 

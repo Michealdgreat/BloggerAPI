@@ -5,5 +5,7 @@ namespace Infrastructure.DataAccess
     {
         Task<List<T>> FromDataBase<T, U>(string dbSp, U parameters, string dbConnString);
         Task ToDataBase<T>(string dbSp, T parameters, string dbConnString);
+
+        Task<T?> GetOneFromDataBase<T, U>(string dbSp, U parameters, string dbConnString);
     }
 }
