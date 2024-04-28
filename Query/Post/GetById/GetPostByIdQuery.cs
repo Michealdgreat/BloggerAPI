@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace Query.Post.GetById
 {
-    public record GetPostByIdQuery(int id) : IQuery<PostDTO>;
+    public record GetPostByIdQuery(int id) : IQuery<PostDTO?>;
 }
