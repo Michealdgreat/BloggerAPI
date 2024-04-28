@@ -1,14 +1,11 @@
-﻿using Domain.CategoryDomain;
+﻿using Query.Post.DTO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Domain.PostDomain.DTOs
+namespace Query.Post.DTO
 {
-    public class CreatePostDTO
+    public class PostDTO
     {
+        public int PostId { get; set; }
         public required string Title { get; set; }
         public string? Description { get; set; }
         public required string PostUrl { get; set; }

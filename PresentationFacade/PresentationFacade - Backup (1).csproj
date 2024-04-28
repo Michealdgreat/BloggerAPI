@@ -7,16 +7,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Remove="Category\**" />
-		<EmbeddedResource Remove="Category\**" />
-		<None Remove="Category\**" />
+		<PackageReference Include="MediatR" Version="12.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Application\Application.csproj" />
-		<ProjectReference Include="..\Domain\Domain.csproj" />
-		<ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-		<ProjectReference Include="..\Query\Query.csproj" />
 	</ItemGroup>
 
+
+	<ProjectReference Include="..\Application\Application.csproj" />
+	QueryQuery
 </Project>

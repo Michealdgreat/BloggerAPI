@@ -1,7 +1,7 @@
 ﻿using Application.Post.CreatePost;
 using Application.Post.DeletePost;
 using Application.Post.UpdatePost;
-using Domain.PostDomain;
+using Query.Post.DTO;
 using MediatR;
 using Query.Post.GetAll;
 using Query.Post.GetByCategory;

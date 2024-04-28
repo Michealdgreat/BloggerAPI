@@ -1,6 +1,6 @@
-﻿using Domain.PostDomain;
+﻿
 
-namespace Domain.CategoryDomain
+namespace Query.Post.DTO
 {
     public class Category
     {

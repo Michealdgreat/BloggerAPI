@@ -1,5 +1,4 @@
-﻿using Domain.PostDomain;
-using MediatR;
+﻿using MediatR;
 
 
 namespace Application.Post.CreatePost

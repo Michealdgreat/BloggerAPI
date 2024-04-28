@@ -1,22 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Application.Post.CreatePost;
-using MediatR;
-using Infrastructure;
-using PresentationFacade;
+﻿using Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using System;
+using MediatR;
+using PresentationFacade;
 
-
-namespace Config;
+namespace BlogConfig;
 
 public static class Bootstrapper
 {
+
     public static void ConfigBootstrapper(this IServiceCollection services)
     {
         InfrastructureBootstrapper.InfrastructureDependency(services);
-        FacadeBootstrapper.FacadeLibraryDependency(services);
-
         services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+        FacadeBootstrapper.FacadeLibraryDependency(services);
 
     }
 }
