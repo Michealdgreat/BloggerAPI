@@ -2,6 +2,6 @@
 
 Some parts of this project are still a work in progress
 
-## Todos
+## Todo:
 - PresentationFacade
 - Controllers
