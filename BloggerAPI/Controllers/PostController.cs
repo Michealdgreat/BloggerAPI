@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.Post.CreatePost;
+using Microsoft.AspNetCore.Mvc;
 using PresentationFacade.Post;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,40 +10,16 @@ namespace BloggerAPI.Controllers;
 [ApiController]
 public class PostController(IPostFacade postFacade) : ControllerBase
 {
-    private readonly IPostFacade postFacade = postFacade;
+    private readonly IPostFacade _postFacade = postFacade;
 
     [HttpPost("CreatePost")]
-    //public async Task CreatePost([FromBody] string value)
-    //{
-    //    var result = _
-    //}
-
-
-    // GET: api/<PostController>
-    [HttpGet]
-    public IEnumerable<string> Get()
+    public async Task<ActionResult> CreatePost([FromBody] CreatePostCommand command)
     {
-        return new string[] { "value1", "value2" };
+        await _postFacade.CreatePost(command);
+
+        return Ok("Task Completed");
+
+
     }
 
-    // GET api/<PostController>/5
-    [HttpGet("{id}")]
-    public string Get(int id)
-    {
-        return "value";
-    }
-
-
-
-    // PUT api/<PostController>/5
-    [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
-    {
-    }
-
-    // DELETE api/<PostController>/5
-    [HttpDelete("{id}")]
-    public void Delete(int id)
-    {
-    }
 }
