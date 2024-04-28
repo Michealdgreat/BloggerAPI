@@ -3,20 +3,14 @@ using Application.Post.DeletePost;
 using Application.Post.UpdatePost;
 using Domain.PostDomain;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using Query.Post.GetAll;
 using Query.Post.GetByCategory;
 using Query.Post.GetById;
 using Query.Post.GetByTitle;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PresentationFacade.Post;
 
-public class PostFacade(IMediator mediator)
+public class PostFacade(IMediator mediator) : IPostFacade
 {
     private readonly IMediator _mediator = mediator;
 
