@@ -3,5 +3,5 @@
 Some parts of this project are still a work in progress
 
 ## Todo:
-- PresentationFacade
 - Controllers
+- Test all SQL Stored procedures
