@@ -5,6 +5,7 @@ using Domain.PostDomain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Query.Post.GetAll;
+using Query.Post.GetByCategory;
 using Query.Post.GetById;
 using Query.Post.GetByTitle;
 using System;
@@ -34,7 +35,7 @@ public class PostFacade(IMediator mediator)
         await _mediator.Send(command);
     }
 
-    public async Task<PostDTO> GetPostById(GetPostByIdQuery query)
+    public async Task<PostDTO?> GetPostById(GetPostByIdQuery query)
     {
         return await _mediator.Send(query);
     }
@@ -45,6 +46,11 @@ public class PostFacade(IMediator mediator)
     }
 
     public async Task<List<PostDTO>> GetPostByTitle(GetPostByTitleQuery query)
+    {
+        return await _mediator.Send(query);
+    }
+
+    public async Task<List<PostDTO>> GetPostByCategory(GetPostByCategoryQuery query)
     {
         return await _mediator.Send(query);
     }
