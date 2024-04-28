@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Application\Application.csproj" />
 		<ProjectReference Include="..\BlogConfig\BlogConfig.csproj" />
 		<ProjectReference Include="..\PresentationFacade\PresentationFacade.csproj" />
 	</ItemGroup>
