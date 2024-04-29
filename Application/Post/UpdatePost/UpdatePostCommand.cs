@@ -15,6 +15,6 @@ namespace Application.Post.UpdatePost
         public required string Content { get; set; }
         public string? FeaturedImageUrl { get; set; }
         public required string Author { get; set; }
-        public List<Guid>? CategoryIds { get; set; }
+        public List<int>? CategoryIds { get; set; }
     }
 }
