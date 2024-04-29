@@ -4,6 +4,8 @@ using BlogConfig;
 using Application;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Post.CreatePost;
+using Application.Post.UpdatePost;
+using Application.Post.DeletePost;
 
 namespace BloggerAPI
 {
@@ -18,6 +20,7 @@ namespace BloggerAPI
 
             // Add services to the container.
 
+            Bootstrapper.ConfigBootstrapper(services);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,8 +29,16 @@ namespace BloggerAPI
 
             services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(CreatePostCommandHandler).Assembly));
 
+            services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(UpdatePostCommandHandler).Assembly));
 
-            Bootstrapper.ConfigBootstrapper(services);
+            services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(DeletePostCommandHandler).Assembly));
+
+
+            //services.AddMediatR(cfg =>
+            //{
+            //    cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            //});
+
 
 
             var app = builder.Build();
