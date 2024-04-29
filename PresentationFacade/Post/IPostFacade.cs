@@ -13,9 +13,9 @@ namespace PresentationFacade.Post
         Task CreatePost(CreatePostCommand command);
         Task DeletePost(DeletePostCommand command);
         Task<List<PostDTO>> GetAllPosts();
-        Task<List<PostDTO>> GetPostByCategory(GetPostByCategoryQuery query);
-        Task<PostDTO?> GetPostById(GetPostByIdQuery query);
-        Task<List<PostDTO>> GetPostByTitle(GetPostByTitleQuery query);
+        Task<List<PostDTO>> GetPostByCategory(string query);
+        Task<PostDTO?> GetPostById(int query);
+        Task<List<PostDTO>> GetPostByTitle(string query);
         Task UpdatePost(UpdatePostCommand command);
     }
 }
