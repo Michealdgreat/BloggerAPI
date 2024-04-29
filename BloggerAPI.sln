@@ -21,7 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Query", "Query\Query.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PresentationFacade", "PresentationFacade\PresentationFacade.csproj", "{EADDDAFF-8453-4917-B02D-F2459A7B8788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogConfig", "BlogConfig\BlogConfig.csproj", "{1DB18348-1CB1-459A-89D9-A6C5351A90B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogConfig", "BlogConfig\BlogConfig.csproj", "{1DB18348-1CB1-459A-89D9-A6C5351A90B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{32C86385-EC9C-47B0-A0DE-CA73258CD912}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\SQL Server Management Studio\BloggerApi\BloggerAPI-SQLQuery.sql = ..\..\..\Documents\SQL Server Management Studio\BloggerApi\BloggerAPI-SQLQuery.sql
+		..\..\..\Documents\SQL Server Management Studio\BloggerApi\BloggerAPISQL_StoredProcedure.sql = ..\..\..\Documents\SQL Server Management Studio\BloggerApi\BloggerAPISQL_StoredProcedure.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
