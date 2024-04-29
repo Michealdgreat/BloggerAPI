@@ -12,4 +12,4 @@ BloggerAPI offers an effective way to manage blog posts and categories, providin
 ## Database scripts here Infrastructure/DatabaseScripts
 
 ## DependencyGraph
-![GRAPH](BloggerAPI/Infrastructure/DatabaseScripts/DependencyGraph.jpg "Dependency Graph")
+![GRAPH](Infrastructure/DatabaseScripts/DependencyGraph.jpg "Dependency Graph")
