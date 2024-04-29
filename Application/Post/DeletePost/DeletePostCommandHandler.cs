@@ -1,18 +1,14 @@
 ﻿using Infrastructure.DataAccess;
 using MediatR;
 
-
 namespace Application.Post.DeletePost;
 
-public class DeletePostCommandHandler(IRepositoryBase repositoryBase) : IRequest<DeletePostCommand>
+public class DeletePostCommandHandler(IRepositoryBase repositoryBase) : IRequestHandler<DeletePostCommand>
 {
     private readonly IRepositoryBase _repoBase = repositoryBase;
 
-    public Task Handle(DeletePostCommand request)
+    public async Task Handle(DeletePostCommand request, CancellationToken cancellationToken)
     {
-        _repoBase.ToDataBase<dynamic>("dbo.DeletePost", new { request }, "BloggerConnStrings");
-
-        return Task.CompletedTask;
+        await _repoBase.ToDataBase<dynamic>("dbo.DeletePost", new { @postId = request.id }, "BloggerConnStrings");
     }
-
 }
