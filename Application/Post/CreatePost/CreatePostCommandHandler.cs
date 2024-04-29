@@ -14,10 +14,9 @@ public class CreatePostCommandHandler(IRepositoryBase repositoryBase) : IRequest
     //    return Task.CompletedTask;
     //}
 
-    public Task Handle(CreatePostCommand request, CancellationToken cancellationToken)
+    public async Task Handle(CreatePostCommand request, CancellationToken cancellationToken)
     {
-        _repoBase.ToDataBase<dynamic>("dbo.AddPostWithCategories", new { request }, "BloggerConnStrings");
+        await _repoBase.ToDataBase<dynamic>("dbo.AddPostWithCategories", new { request.Description, request.Author, request.Title, request.FeaturedImageUrl, request.Content, request.PostUrl, request.CategoryNames }, "BloggerConnStrings");
 
-        return Task.CompletedTask;
     }
 }
