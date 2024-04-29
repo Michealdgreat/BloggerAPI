@@ -6,6 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Post.CreatePost;
 using Application.Post.UpdatePost;
 using Application.Post.DeletePost;
+using Query.Post.GetByCategory;
+using Query.Post.GetById;
+using Query.Post.GetByTitle;
+using Query.Post.GetAll;
 
 namespace BloggerAPI
 {
@@ -27,18 +31,11 @@ namespace BloggerAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(CreatePostCommandHandler).Assembly));
-
-            services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(UpdatePostCommandHandler).Assembly));
-
-            services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(DeletePostCommandHandler).Assembly));
-
 
             //services.AddMediatR(cfg =>
             //{
             //    cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
             //});
-
 
 
             var app = builder.Build();
