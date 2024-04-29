@@ -9,3 +9,7 @@ BloggerAPI offers an effective way to manage blog posts and categories, providin
 - Dapper: Dapper is integrated for lightweight, fast data access, allowing seamless database interaction.
 - MediatR: MediatR simplifies handling commands and queries, resulting in a more maintainable and testable codebase.
 
+## Database scripts here Infrastructure/DatabaseScripts
+
+## DependencyGraph
+![GRAPH](BloggerAPI/Infrastructure/DatabaseScripts/DependencyGraph.jpg "Dependency Graph")
