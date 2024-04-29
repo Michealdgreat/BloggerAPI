@@ -29,9 +29,9 @@ public class PostFacade(IMediator mediator) : IPostFacade
         await _mediator.Send(command);
     }
 
-    public async Task<PostDTO?> GetPostById(GetPostByIdQuery query)
+    public async Task<PostDTO?> GetPostById(int query)
     {
-        return await _mediator.Send(query);
+        return await _mediator.Send(new GetPostByIdQuery(query));
     }
 
     public async Task<List<PostDTO>> GetAllPosts()
@@ -39,14 +39,14 @@ public class PostFacade(IMediator mediator) : IPostFacade
         return await _mediator.Send(new GetPostListQuery());
     }
 
-    public async Task<List<PostDTO>> GetPostByTitle(GetPostByTitleQuery query)
+    public async Task<List<PostDTO>> GetPostByTitle(string query)
     {
-        return await _mediator.Send(query);
+        return await _mediator.Send(new GetPostByTitleQuery(query));
     }
 
-    public async Task<List<PostDTO>> GetPostByCategory(GetPostByCategoryQuery query)
+    public async Task<List<PostDTO>> GetPostByCategory(string query)
     {
-        return await _mediator.Send(query);
+        return await _mediator.Send(new GetPostByCategoryQuery(query));
     }
 
 }
