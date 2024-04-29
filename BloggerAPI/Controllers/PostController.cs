@@ -3,6 +3,11 @@ using Application.Post.DeletePost;
 using Application.Post.UpdatePost;
 using Microsoft.AspNetCore.Mvc;
 using PresentationFacade.Post;
+using Query.Post.DTO;
+using Query.Post.GetAll;
+using Query.Post.GetByCategory;
+using Query.Post.GetById;
+using Query.Post.GetByTitle;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -35,5 +40,38 @@ public class PostController(IPostFacade postFacade) : ControllerBase
 
         return Ok("Post deleted!.");
     }
+
+    [HttpGet("GetPostById")]
+    public async Task<PostDTO?> GetPostById(int query)
+    {
+        var result = await _postFacade.GetPostById(query);
+
+        return result;
+    }
+
+    [HttpGet("GetAllPosts")]
+    public async Task<List<PostDTO>> GetAllPosts()
+    {
+        var result = await _postFacade.GetAllPosts();
+
+        return result;
+    }
+
+    [HttpGet("GetPostByTitle")]
+    public async Task<List<PostDTO>> GetPostByTitle(string query)
+    {
+        var result = await _postFacade.GetPostByTitle(query);
+
+        return result;
+    }
+
+    [HttpGet("GetPostByCategory")]
+    public async Task<List<PostDTO>> GetPostByCategory(string query)
+    {
+        var result = await _postFacade.GetPostByCategory(query);
+
+        return result;
+    }
+
 
 }
