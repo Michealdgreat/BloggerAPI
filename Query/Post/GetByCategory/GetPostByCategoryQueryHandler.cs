@@ -12,7 +12,7 @@ public class GetPostByCategoryQueryHandler(IRepositoryBase repositoryBase) : IQu
 
     public async Task<List<PostDTO>> Handle(GetPostByCategoryQuery request, CancellationToken cancellationToken)
     {
-        await _repoBase.FromDataBase<PostDTO, dynamic>("dbo.GetPostsByCategory", new { request.value }, "BloggerConnStrings");
+        await _repoBase.FromDataBase<PostDTO, dynamic>("dbo.GetPostsByCategory", new { @CategoryName = request.value }, "BloggerConnStrings");
 
         return await Task.FromResult(new List<PostDTO>());
     }
