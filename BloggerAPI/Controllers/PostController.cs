@@ -1,4 +1,6 @@
 ﻿using Application.Post.CreatePost;
+using Application.Post.DeletePost;
+using Application.Post.UpdatePost;
 using Microsoft.AspNetCore.Mvc;
 using PresentationFacade.Post;
 
@@ -17,9 +19,21 @@ public class PostController(IPostFacade postFacade) : ControllerBase
     {
         await _postFacade.CreatePost(command);
 
-        return Ok("Task Completed");
+        return Ok("Post Created");
+    }
+    [HttpPut("UpdatePost")]
+    public async Task<ActionResult> UpdatePost([FromBody] UpdatePostCommand command)
+    {
+        await _postFacade.UpdatePost(command);
 
+        return Ok("Post updated");
+    }
+    [HttpDelete("DeletePost")]
+    public async Task<ActionResult> DeletePost([FromBody] DeletePostCommand command)
+    {
+        await _postFacade.DeletePost(command);
 
+        return Ok("Post deleted!.");
     }
 
 }
