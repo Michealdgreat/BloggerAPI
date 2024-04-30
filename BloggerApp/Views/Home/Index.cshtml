@@ -1,0 +1,288 @@
+﻿@{
+    ViewData["Title"] = "Welcome to My Blog";
+}
+
+@model List<PostModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News</title>
+</head>
+<body>
+
+    <section id="news1">
+        <article>
+            @foreach (var article in Model.TakeWhile(article => article.FeaturedImageUrl != null).Take(1))
+            {
+
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+                <div style="position: relative;">
+                    <img src="@article.FeaturedImageUrl" class="bigImg">
+                    <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">LIVE UPDATES</b></div>
+                </div>
+            }
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(2).Take(1))
+            {
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+
+                @foreach (var article in Model.Skip(16).Take(1))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
+
+            </ul>
+        </article>
+        <article>
+            <div>
+                @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(4).Take(1))
+                {
+                    <div style="position: relative;">
+                        <img src="@article.FeaturedImageUrl" class="smallImg">
+                        <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">LIVE UPDATES</b></div>
+                    </div>
+
+                    <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+                }
+                <ul>
+                    @foreach (var article in Model.Skip(4).Take(6))
+                    {
+                        <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                    }
+                </ul>
+            </div>
+        </article>
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(3).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(10).Take(3))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
+            </ul>
+        </article>
+    </section>
+    <h1>MNN Highlights</h1>
+
+    <section id="news2">
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(5).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(15).Take(4))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
+
+            </ul>
+        </article>
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(6).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="bigImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>‘@article.Title’</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(7).Take(2))
+                {
+                    <li>
+                        <img src="@article.FeaturedImageUrl" class="vSmallImg">
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
+                    </li>
+                }
+            </ul>
+        </article>
+        @* SIDE BAR SECTION 1 *@
+        <article class="SArticle">
+            <ul style="margin-top: 0;">
+
+                @foreach (var article in Model.Take(6))
+                {
+                    <li style="border-top: none; padding-top: 0;">
+                        <img src="@article.FeaturedImageUrl" class="vSmallImg">
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
+                    </li>
+                    <hr />
+                }
+            </ul>
+        </article>
+
+    </section>
+    <section>
+        <h1>Featured Section</h1>
+    </section>
+    <section id="news3">
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(8).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(9).Take(3))
+                {
+                    <li>
+                        <img src="@article.FeaturedImageUrl" class="vSmallImg">
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
+                    </li>
+                }
+            </ul>
+        </article>
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(10).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="bigImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+
+            <ul>
+                @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(11).Take(2))
+                {
+                    <li>
+                        <img src="@article.FeaturedImageUrl" class="vSmallImg">
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
+                    </li>
+                }
+
+            </ul>
+        </article>
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(12).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(13).Take(2))
+                {
+                    <li>
+                        <img src="@article.FeaturedImageUrl" class="vSmallImg">
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+                    </li>
+
+                }
+
+                @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(14).Take(1))
+                {
+                    <li>
+                        <div style="position: relative; cursor: pointer; height: 60px;">
+                            <img src="@article.FeaturedImageUrl" class="vSmallImg">
+                            <div style="color: white; position: absolute; left: 0; bottom: 0; background-color: gray; padding: .1rem .4rem;"><i class="bi bi-play-circle" style="padding-right: 5px;"></i>Watch</div>
+                        </div>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
+                    </li>
+                }
+            </ul>
+        </article>
+    </section>
+    <section>
+        <h1>More From MNews</h1>
+    </section>
+    <section id="news5">
+        <article class="SArticle">
+            <div>TRENDING</div>
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(15).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) style="font-size: 1.2rem;"><b>@article.Title</b></a>
+            }
+
+            <ul>
+                @foreach (var article in Model.Skip(15).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
+            </ul>
+        </article>
+        <article class="SArticle">
+            <div>HISTORY</div>
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(16).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(20).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
+            </ul>
+        </article>
+        <article class="SArticle">
+            <div>EXCLUSIVE</div>
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(17).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(20).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
+            </ul>
+        </article>
+    </section>
+    <section id="news6">
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(18).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(30).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
+
+            </ul>
+        </article>
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(19).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(23).Take(4))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
+            </ul>
+        </article>
+        <article class="SArticle">
+            @foreach (var article in Model.Where(article => article.FeaturedImageUrl != null).Skip(20).Take(1))
+            {
+                <img src="@article.FeaturedImageUrl" class="smallImg">
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
+            }
+            <ul>
+                @foreach (var article in Model.Skip(33).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
+            </ul>
+        </article>
+
+    </section>
+
+
+</body>
+</html>
+

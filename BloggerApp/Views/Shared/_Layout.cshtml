@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BloggerApp</title>
+    <link rel="icon" href="~/BloggerAppTemplate/Img/favicon.png">
+    <link href="Style/BLOG.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/bloggerapptemplate/style/BLOG.css" rel="stylesheet" asp-append-version="true" />
+    <script src="~/bloggerapptemplate/blog.js"></script>
+    <link href="~/bloggerapptemplate/style/blog.css" rel="stylesheet" />
+    <a href="~/bloggerapptemplate/style/blog.css.map">~/bloggerapptemplate/style/blog.css.map</a>
+</head>
+<body>
+    <nav>
+        <div>
+            <i class="bi bi-list" style="font-size: 1.8rem; cursor: pointer;"></i>
+            <a href="@Url.Action("Index", "Home")"><img src="~/bloggerapptemplate/Img/favicon.png"></a>
+            <a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "world" })">World</a>
+            <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Politics"})>Politics</a>
+            <a href=" @Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Business" })">Business</a>
+            <a href=" @Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Health" })">Health</a>
+            <a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Entertainment" })">Entertainment</a>
+            <a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Fashion" })">Fashion</a>
+            <a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Travel" })">Travel</a>
+            <a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Sport" })">Sports</a>
+        </div>
+        <div>
+            <form method="get" action="@Url.Action("SearchByQuery", "SearchNews")">
+                <input type="text" name="SearchQuery" placeholder="Search MNN..." style="background-color: #333; color: white; border: none; padding: 10px; width: 50%;">
+                <button>Search</button>
+            </form>
+        </div>
+    </nav>
+    <main>
+        <!-- Nav2-Below main menu  -->
+        <div id="div1">
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Ukraine" })">War in Ukraine</a></span>
+            <span>|</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Iran missile" })">Iran missile</a></span>
+            <span>|</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Sudan conflict" })">Sudan conflict</a></span>
+            <span>|</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Canada wildfires" })">Canada wildfires</a></span>
+        </div>
+
+    </main>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <h1></h1>
+        <article>
+            <div>
+                <ul></ul>
+            </div>
+        </article>
+        <article>
+            <form method="get" action="@Url.Action("SearchByQuery", "SearchNews")">
+                <input type="text" name="SearchQuery" placeholder="Search MNN...">
+                <button type="submit">Search →</button>
+            </form>
+            <div>
+                <h3 role="link">Travel</h3>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Destinations" })>Destinations</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Food and Dring" })>Food & Drink</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "lifestyle" })>Stay</a>
+            </div>
+            <div>
+                <h3 role="link">Sports</h3>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Football" })>Football</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Tennis" })>Tennis</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Golf" })>Golf</a>
+            </div>
+            <div>
+                <h3 role="link">Videos</h3>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Live Tv" })>Live TV</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Digital Studios" })>Digital Studios</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Netflix Movies" })>NETFLIX Films</a>
+            </div>
+            <div>
+                <h3 role="link">Features</h3>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Modern" })>Modern</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Earth" })>Earth</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "freedom" })>Freedom</a>
+            </div>
+            <div>
+                <h3 role="link">Weather</h3>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "climate" })>Climate</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Wild tracker" })>Wildfire Tracker</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "video" })>Video</a>
+            </div>
+            <div>
+                <h3 role="link">More</h3>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "photos" })>Photos</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "videos" })>Videos</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "investigations" })>Investigations</a>
+            </div>
+        </article>
+        <article>
+        </article>
+        <article>
+        </article>
+        <article>
+            <div>
+                <img src="~/bloggerapptemplate/Img/favicon.png">
+                <a href="">MN News</a>
+            </div>
+            <div>
+                <p></p>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <button>LIVE</button>
+            </div>
+        </article>
+        <article>
+            BloggerApp &trade; & &copy; 2024 Blogger News Network.</p>
+        </article>
+    </footer>
+    <!-- Bootstrap JScript Lib -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="BLOG.js"></script>
+    <script src="js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
