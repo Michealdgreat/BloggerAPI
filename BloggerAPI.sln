@@ -29,7 +29,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "Database
 		..\..\..\Documents\SQL Server Management Studio\BloggerApi\BloggerAPISQL_StoredProcedure.sql = ..\..\..\Documents\SQL Server Management Studio\BloggerApi\BloggerAPISQL_StoredProcedure.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggerApp", "BloggerApp\BloggerApp.csproj", "{69187860-E407-4786-8717-835FDB2CB11A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloggerApp", "BloggerApp\BloggerApp.csproj", "{69187860-E407-4786-8717-835FDB2CB11A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABC7B95F-309F-4996-AFF2-AA6E21531B67}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

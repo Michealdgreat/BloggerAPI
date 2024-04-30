@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  BloggerAPI:
+    build:
+      context: .
+      dockerfile: BloggerAPI/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__BloggerconnStrings="Data Source=DESKTOP-AAAAAAA\\\\SQLEXPRESS;Database=BloggerDB;Integrated Security=True;TrustServerCertificate=True"
+
+  BloggerApp:
+    build:
+      context: .
+      dockerfile: BloggerApp/Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__BloggerconnStrings="Data Source=DESKTOP-AAAAAAA\\\\SQLEXPRESS;Database=BloggerDB;Integrated Security=True;TrustServerCertificate=True"
